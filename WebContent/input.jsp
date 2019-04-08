@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="result" method="post">
+<form action="result.jsp" method="post">
 <center>
 
 	<h3>다중 문자 치환 알고리즘을 이용한<br>문자 암호화</h3>
