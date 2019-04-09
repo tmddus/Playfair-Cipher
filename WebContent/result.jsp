@@ -2,23 +2,26 @@
 
 public char[] boardSet(String keyTxt) { // 암호판 만들기
 		String key = keyTxt.replace(" ", "");
-		key += "abcdefghijklmnopqrstuvwxy";
+		key += "abcdefghijklmnopqrstuvwxyz";
 		char[] resultArr = new char[25];
 		int index=0;
 		boolean chk = true;
 		
-		for(int i = 0; i < key.length(); i++){ // key 안을 모두 도는 for
-			chk=true;	// 중복값이 존재하는지 판단하는 변수
-			for(int j = 0; j < index; j++) {// result 속의 값과 key의 값이 같은지 판단
-				if(key.charAt(i) == resultArr[j])
-					chk = false;// 같은 값이 있으면 false로 스위치
+		for(int i = 0; i < key.length(); i++){
+			chk=true;
+			for(int j = 0; j < index; j++){
+				if(key.charAt(i) == resultArr[j]){
+					chk=false;
+				}else if(key.charAt(i) == 'q'){
+					chk = false;
+				}
 			}
-			if(chk) {// chk 가 false면 같은 값이 있다는 것으로, 대입을 하지 않고 반대의 경우엔 대입
+			if(chk){
 				resultArr[index] = key.charAt(i);
 				index++;
 			}
+			
 		}
-		
 		return resultArr;
 }
 		
@@ -42,8 +45,11 @@ public char[] boardSet(String keyTxt) { // 암호판 만들기
 	char[] boardKey = boardSet(keyTxt); // 암호판에 들어갈 배열
 	
 	for(int i = 0; i < boardKey.length; i++){ %>
-		<%= boardKey[i]%>
-	<% }%>
+		<%=boardKey[i] %>
+	<% 	if((i + 1)%5 == 0){ %>
+			<br>
+	<%	}
+	 }%>
 
 </body>
 </html>
