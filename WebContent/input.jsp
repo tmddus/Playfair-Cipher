@@ -28,13 +28,15 @@
 					</h3>
 				</legend>
 				<table>
-					<tr>
-						<td>평문 :</td>
-						<td><input type="text" name="plainTxt" size="25"></td>
-					</tr>
+					
 					<tr>
 						<td>가상의 키 :</td>
 						<td><input type="text" name="keyTxt" size="25"></td>
+					</tr>
+					
+					<tr>
+						<td>평문 :</td>
+						<td><input type="text" name="plainTxt" size="25"></td>
 					</tr>
 					<tr colspan="2">
 						<td>	
